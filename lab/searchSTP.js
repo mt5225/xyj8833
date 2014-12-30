@@ -8,11 +8,7 @@ function getLinks() {
     });
 }
 
-casper.start('http://www.sierratradingpost.com/', function() {
-    // search for 'patagonia' from google form
-     this.fill('form.searchForm', {
-        'searchBox':    'patagonia'
-    }, true);
+casper.start('http://www.sierratradingpost.com/s~patagonia/?perPage=96', function() {
 });
 
 casper.then(function() {

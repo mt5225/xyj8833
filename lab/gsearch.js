@@ -21,5 +21,5 @@ casper.then(function() {
 casper.run(function() {
     // echo results in some pretty fashion
     this.echo(links.length + ' links found:');
-    this.echo(' - ' + links.join('\n - ')).exit();
+    this.echo(' [URL] ' + links.join('\n - ')).exit();
 });

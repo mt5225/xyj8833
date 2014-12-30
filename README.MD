@@ -23,8 +23,11 @@ root@63706c575eb6:/xyj8833/lab# casperjs gsearch.js
 ```
 
 ## screen commands
+```
 - Ctrl-a c  //create an new screen
 - Ctrl-a d  //detach
+- Ctrl-a w  //list all screens
 - screen -r //attach
+```
 
 

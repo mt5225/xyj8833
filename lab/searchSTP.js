@@ -10,7 +10,9 @@ function getLinks() {
 
 casper.start('http://www.sierratradingpost.com/', function() {
     // search for 'patagonia' from google form
-    this.fill('form[action="/product/search/"]', { searchBox: 'patagonia' }, true);
+     this.fill('form.searchForm', {
+        'searchBox':    'patagonia'
+    }, true);
 });
 
 casper.then(function() {

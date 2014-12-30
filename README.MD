@@ -11,10 +11,16 @@
 - https://github.com/crosbymichael/dockerui
 
 
-# install phantom js
+## install phantom js
+```
 - sudo docker run cmfatih/phantomjs /usr/bin/phantomjs -v
 - sudo docker run -i -t -d cmfatih/phantomjs /bin/bash
+```
 
+## run casperjs script
+```
+root@63706c575eb6:/xyj8833/lab# casperjs gsearch.js 
+```
 
 
 

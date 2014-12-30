@@ -10,7 +10,7 @@ function getLinks() {
 
 casper.start('http://google.com/', function() {
     // search for 'casperjs' from google form
-    this.fill('form[action="/"]', { q: 'casperjs' }, true);
+    this.fill('form[action="/search"]', { q: 'casperjs' }, true);
 });
 
 casper.then(function() {

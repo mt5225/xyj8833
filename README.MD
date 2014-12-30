@@ -13,6 +13,8 @@
 
 # install phantom js
 - sudo docker run cmfatih/phantomjs /usr/bin/phantomjs -v
-- sudo docker run -i -t jerry/phantomjs -d cmfatih/phantomjs /bin/bash
+- sudo docker run -i -t -d cmfatih/phantomjs /bin/bash
+
+
 
 

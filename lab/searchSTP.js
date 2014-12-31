@@ -1,11 +1,14 @@
-var links = [];
+var products = [];
 var casper = require('casper').create();
 
-function getLinks() {
-    var links = document.querySelectorAll('.productTitle a');
-    return Array.prototype.map.call(links, function(e) {
-        return e.getAttribute('href');
-    });
+
+function getproducts() {
+    var products = document.querySelectorAll('.productTitle a');
+    return Array.prototype.map.call(products, function(e) {
+        return {
+            "url" : e.getAttribute('href'),
+            "title" : e.getAttribute('title')
+        }});
 }
 
 casper.start('http://www.sierratradingpost.com/s~patagonia/?perPage=96', function() {
@@ -13,12 +16,16 @@ casper.start('http://www.sierratradingpost.com/s~patagonia/?perPage=96', functio
 
 casper.then(function() {
     // aggregate results for the 'patagonia' search
-    links = this.evaluate(getLinks);
+    products = this.evaluate(getproducts);
 });
 
 
 casper.run(function() {
     // echo results in some pretty fashion
-    this.echo(links.length + ' links found:');
-    this.echo(' - ' + links.join('\n - ')).exit();
+    this.echo(products.length + ' products found for patagonia:');
+    for (var i = products.length - 1; i >= 0; i--) {
+        this.echo(' - ' + JSON.stringify(products[i]) + '\n');
+    };
+
+    this.exit();
 });

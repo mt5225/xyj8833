@@ -30,4 +30,8 @@ root@63706c575eb6:/xyj8833/lab# casperjs gsearch.js
 - screen -r //attach
 ```
 
+## install mongoDB
+```
+docker run --name xyj-mongo -d mongo
+```
 

@@ -7,7 +7,7 @@ function getproducts() {
     return Array.prototype.map.call(products, function(e) {
         return {
             "url" : e.getAttribute('href'),
-            "title" : e.getAttribute('title')
+            "title" : e.textContent
         }});
 }
 
@@ -24,7 +24,7 @@ casper.run(function() {
     // echo results in some pretty fashion
     this.echo(products.length + ' products found for patagonia:');
     for (var i = products.length - 1; i >= 0; i--) {
-        this.echo(' - ' + JSON.stringify(products[i]) + '\n');
+        this.echo(' - ' + JSON.stringify(products[i]) + "\n");
     };
 
     this.exit();

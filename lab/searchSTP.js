@@ -7,7 +7,7 @@ function getproducts() {
     return Array.prototype.map.call(products, function(e) {
         return {
             "url" : e.getAttribute('href').trim(),
-            "title" : e.textContent.trim();
+            "title" : e.textContent.trim()
         }});
 }
 

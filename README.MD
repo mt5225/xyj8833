@@ -35,3 +35,14 @@ root@63706c575eb6:/xyj8833/lab# casperjs gsearch.js
 docker run --name xyj-mongo -d mongo
 ```
 
+##commit an image
+```
+ sudo docker commit 63706c575eb6 jerry/casper_stp:version001
+```
+##enable sshd
+```
+apt-get install openssh-server
+commit container to image
+sudo docker run -d -p 10.130.32.211:9822:22 --name stp mt5225/casper_stp:0.0.1 /bin/sh -c "/etc/init.d/ssh start;
+while true;do echo hello;sleep 100;done"
+```
